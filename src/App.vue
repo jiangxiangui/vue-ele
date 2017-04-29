@@ -2,6 +2,10 @@
   <div id="app">
     <!-- <img class="logo" src="./assets/logo.png"> -->
     <hello></hello>
+    <!-- <div class="header">I am header</div> -->
+    <v-header></v-header>
+    <div class="tab">I am tab</div>
+    <div class="content">I am content</div>
     <!-- <p>
       Welcome to your Vue.js1.0.26 app!
     </p>
@@ -23,17 +27,19 @@
 </template>
 
 <script>
-import Hello from './components/Hello'
+import Hello from './components/Hello';
+import header from './components/header/header';
 
 export default {
   components: {
-    Hello
+    Hello,
+    'v-header': header
   }
 }
 </script>
 
 <style>
-html {
+/*html {
   height: 100%;
 }
 
@@ -60,5 +66,5 @@ body {
 .logo {
   width: 100px;
   height: 100px
-}
+}*/
 </style>
