@@ -1,15 +1,26 @@
 <template>
-  <div id="app">
+  <div>
     <!-- <img class="logo" src="./assets/logo.png"> -->
     <hello></hello>
     <!-- <div class="header">I am header</div> -->
     <v-header></v-header>
     <div class="tab">
-      <div class="tab-item">商品</div>
-      <div class="tab-item">评论</div>
-      <div class="tab-item">商家</div>
+      <!-- 使用指令 v-link 进行导航 -->
+      <div class="tab-item">
+        <a v-link="{ path: '/goods'}">商品</a>
+      </div>
+      <div class="tab-item">
+        <a v-link="{ path: '/ratings'}">评论</a>
+      </div>
+      <div class="tab-item">
+        <a v-link="{ path: '/seller'}">商家</a>
+      </div>
     </div>
-    <div class="content">I am content</div>
+    
+    <!-- 路由外链，利用 router-view 指令刷新content -->
+    <router-view></router-view>
+    <!-- <div class="content">I am content</div> -->
+    
     <!-- <p>
       Welcome to your Vue.js1.0.26 app!
     </p>
@@ -43,7 +54,6 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  #app
     .tab
       display: flex
       width: 100%
@@ -52,7 +62,13 @@ export default {
       .tab-item
         flex: 1
         text-align: center
-
+        & > a
+          display: block
+          text-decoration: none
+          font-size: 14px
+          color: rgb(77,85,93)
+          &.active
+            color: rgb(240,20,20)
 
 
 /*html {
