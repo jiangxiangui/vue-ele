@@ -6,6 +6,9 @@ import VueRouter from 'vue-router';
 import goods from './components/goods/goods.vue';
 import ratings from './components/ratings/ratings';
 import seller from './components/seller/seller';
+
+import './common/stylus/index.styl';
+
 // 安装路由模块
 Vue.use(VueRouter);
 
