@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import App from './App';
+// 引入 vue-rescource 组件
+import VueResource from 'vue-resource';
 // 引入路由模块
 import VueRouter from 'vue-router';
 // 引入组件goods
@@ -11,6 +13,7 @@ import './common/stylus/index.styl';
 
 // 安装路由模块
 Vue.use(VueRouter);
+Vue.use(VueResource);
 
 // /* eslint-disable no-new */
 // new Vue({
