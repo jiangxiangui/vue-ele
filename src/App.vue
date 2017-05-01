@@ -3,7 +3,7 @@
     <!-- <img class="logo" src="./assets/logo.png"> -->
     <hello></hello>
     <!-- <div class="header">I am header</div> -->
-    <v-header></v-header>
+    <v-header v-bind:seller = "seller" ></v-header>
     <div class="tab border-1px">
       <!-- 使用指令 v-link 进行导航 -->
       <div class="tab-item">
