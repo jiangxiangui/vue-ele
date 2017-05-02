@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <img class="logo" src="./assets/logo.png"> -->
-    <hello></hello>
+    <!-- <hello></hello> -->
     <!-- <div class="header">I am header</div> -->
     <v-header v-bind:seller = "seller" ></v-header>
     <div class="tab border-1px">
