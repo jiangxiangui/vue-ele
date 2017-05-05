@@ -222,14 +222,14 @@
 		height: 100%
 		overflow: auto
 		transition: all 0.5s
-		backdrop-filter: blur(10px) 
+		backdrop-filter: blur(10px)
 		background: rgba(7,17,27,0.8)
 		&.fade-trasition
 			opactity: 1
 			background: rgba(7,17,27,0.8)
 		&.fade-enter,&.fade-leave
-			opactity: 0.5
-			background: rgba(7,17,27,0.4)
+			opactity: 0
+			background: rgba(7,17,27,0)
 		.detail-wrapper
 			width: 100%
 			min-height: 100%
@@ -272,6 +272,7 @@
 							width: 16px
 							height: 16px
 							vertical-right: 16px 16px
+							background-size:16px 16px
 							background-repeat: no-repeat
 							&.decrease
 								bg-image('decrease_2')

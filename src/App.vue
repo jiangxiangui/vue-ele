@@ -18,7 +18,7 @@
     </div>
     
     <!-- 路由外链，利用 router-view 指令刷新content -->
-    <router-view></router-view>
+    <router-view :seller="seller"></router-view>
     <!-- <div class="content">I am content</div> -->
     
     <!-- <p>

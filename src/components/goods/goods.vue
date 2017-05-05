@@ -4,7 +4,7 @@
 			<ul>
 				<li v-for="item in goods" class="menu-item" :class="{'current':currentIndex === $index}" @click="selectMenu($index,$event)">
 					<span class="text border-1px">
-							<span v-show="item.type > 0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
+						<span v-show="item.type > 0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
 					</span>
 				</li>
 			</ul>
@@ -31,11 +31,13 @@
 				</li>
 			</ul>
 		</div>
+		<shopcart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
 	</div>
 </template>
 
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll';
+import shopcart from 'components/shopcart/shopcart';
 
 const ERROR_OK = 0;
 
@@ -54,10 +56,10 @@ export default {
 	},
 	computed: {
 		currentIndex() {
-			for (let i = 0; i < this.listHeight; i++) {
+			for (let i = 0; i < this.listHeight.length; i++) {
 				let height1 = this.listHeight[i];
 				let height2 = this.listHeight[i + 1];
-				if (!height2 || (this.scrollY >= listHeight1 && this.scrollY < listHeight2)) {
+				if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
 					return i;
 				}
 			}
@@ -117,6 +119,9 @@ export default {
 				this.listHeight.push(height);
 			}
 		}
+	},
+	components: {
+		shopcart
 	}
 };
 </script>
@@ -139,8 +144,8 @@ export default {
 				display: table
 				width: 56px
 				height: 54px
-				// margin-right: 4px
 				line-height: 14px
+				// margin-right: 4px
 				padding: 0 12px
 				// background-size: 12px 12px
 				// background-repeat: no-repeat
@@ -159,7 +164,7 @@ export default {
 					height: 12px
 					margin-right: 2px
 					background-size: 12px 12px
-					backgroung-repeat: no-repeat
+					background-repeat: no-repeat
 					&.decrease
 						bg-image('decrease_3')
 					&.discount
